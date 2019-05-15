@@ -1,0 +1,6 @@
+<mat-grid-list cols="3" rowHeight="4:7">
+  <mat-grid-tile *ngFor="let unicorn of unicorns">
+    <uni-unicorn-card [unicorn]="unicorn" (removeUni)="removeUnicornFromList(unicorn)"
+    ></uni-unicorn-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,13 @@
+<form [formGroup]="unicornForm" (ngSubmit)="saveUnicorn()">
+  <h1>Modify unicorn</h1>
+  <label> Name:
+    <input formControlName="name"/>
+  </label>
+  <label> Weight:
+    <input formControlName="weight"/>
+  </label>
+  <label> Birthyear:
+    <input formControlName="birthyear"/>
+  </label>
+  <button type="submit" [disabled]="unicornForm.invalid">Save</button>
+</form>

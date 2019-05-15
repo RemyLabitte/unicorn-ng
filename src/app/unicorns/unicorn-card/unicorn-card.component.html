@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{unicorn.name | magicalName}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{unicorn.photo.replace('0.0.0.0','localhost')}}" alt=""/>
+  <mat-card-content>
+    <div>
+      <strong>Birthyear:</strong> {{unicorn.birthday}} <br/>
+      <strong>Weight:</strong> {{unicorn.weight}}<br/>
+      <strong>Capacities:</strong><br/>
+      <li *ngFor="let cap of unicorn.capacityLabels">
+        {{cap}}<br/>
+      </li>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button [ngClass]="{'selected':unicorn.selected}" mat-button (click)="setFavorite(unicorn)">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>visibility</mat-icon>
+    </button>
+    <button mat-button (click)="openDialog()">
+      <mat-icon>create</mat-icon>
+    </button>
+    <button mat-button (click)="deleteUnicorn(unicorn)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
